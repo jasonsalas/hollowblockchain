@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"time"
 
 	"github.com/jasonsalas/bc/blockchain"
 )
@@ -18,6 +19,7 @@ func main() {
 	chain.AddBlock("Pride")
 
 	for _, block := range chain.Blocks {
+		time.Sleep(1 * time.Second)
 		fmt.Printf("data: %s\n", block.Data)
 		fmt.Printf("previous hash: %x\n", block.PrevHash)
 		fmt.Printf("hash: %x\n", block.Hash)
